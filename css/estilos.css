@@ -1,0 +1,234 @@
+/*
+MATERIAL:
+_________
+Responsive:
+- Mobile: 375px
+- Desktop: 1440px
+
+Colors:
+- Violet: hsl(257, 40%, 49%)
+- Soft Magenta: hsl(300, 69%, 71%)
+
+Typography:
+(Headings):
+- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
+- Weights: 400, 600
+(Body):
+- Family: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
+- Weights: 400
+
+Icons:
+- [Font Awesome](https://fontawesome.com/)
+- [IcoMoon](https://icomoon.io/)
+- [Ionicons](https://ionicons.com/)
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+ :root{
+   --bgc-fondo: hsl(257, 40%, 49%);
+   --efecto-hover: hsl(300, 69%, 71%);
+ }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bgc-fondo);
+  background-image: url("../img/bg-mobile.svg");
+  background-repeat: no-repeat;
+}
+
+/* Mobile First  < 375px */
+
+.main__container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.img__overlaylogo--hero{
+  margin: 35px 0 60px 1.5rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.img__hero--logo{
+  width: 10rem;
+  height: 2.15rem;
+}
+
+.img__overlaymockups--hero{
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img__hero--mockups{
+  width: 80%;
+
+}
+
+.texts__hero{
+  margin: 0 auto 60px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+.text__paragraph--hero{
+  margin: 20px 0 30px;
+  font-size: 1rem;
+  color: #e1e1e1;
+}
+
+.button__reg{
+  padding: 13px 80px;
+  background-color: #fbfbfb;
+  font-size: .85rem;
+  text-decoration: none;
+  color: #66428b;
+  box-shadow: 0 0 10px -3px #000;
+  border-radius: 50px;
+  border: 1px solid #fff;
+}
+.button__reg:hover{
+  background-color: var(--efecto-hover);
+  border: 1px solid var(--efecto-hover);
+  transition: all ease-in-out 0.3s;
+  color: #f7f7f7;
+}
+.title__button--reg{
+  font-size: .8rem;
+  font-weight: 400;
+}
+
+.icons__container--hero{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.icon{
+  margin: 0 5px;
+  padding: 5px 6px 2px;
+  font-size: .9rem;
+  color: #f7f7f7;
+  border: 1px solid #f7f7f7;
+  border-radius: 50%;
+  text-decoration: none;
+}
+.icon:hover{
+  cursor: pointer;
+  color: var(--efecto-hover);
+  border: 1px solid var(--efecto-hover);
+  transition: all ease-in-out 0.3s;
+}
+
+/* Responsive Design */
+
+/* > 375px */
+@media (min-width: 376px) {
+  body{
+    background-image: url("../img/bg-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: right 2vw bottom 0;
+    background-size: 170vh;
+  }
+}
+
+/* > 480px */
+@media (min-width: 481px) {
+  .main__container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .img__hero--logo{
+    position: relative;
+    margin-left: 30px;
+  }
+  .img__overlaymockups--hero{
+    width: 120%;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .texts__hero{
+    width: 80%;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .icons__container--hero{
+    margin-right: 40px;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .button__reg{
+    padding: 10px 50px;
+  }
+
+  .icons__container--hero{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  .icon{
+    margin: 50px 10px 0;
+    padding: .23rem .5rem;
+    font-size: 1.2rem;
+    border-radius: 80%;
+  }
+
+}
+
+@media (min-width: 1000px) {
+  .img__hero--logo{
+    width: 200px;
+    height: 50px;
+    margin-left: 60px;
+  }
+  .img__overlaylogo--hero{
+    width: 40%;
+  }
+
+  .texts__hero{
+    width: 70%;
+    font-size: 1.7rem;
+    text-align: left;
+    align-items: start;
+  }
+.text__paragraph--hero{
+  width: 105%;
+  font-size: 1.04rem;
+}
+
+  .button__reg{
+    padding: 1rem 4.2rem;
+    font-size: 1.2rem;
+    color: hsl(257, 40%, 59%);
+  }
+
+  .icon{
+    margin: 0 10px;
+  }
+  .icons__container--hero{
+    margin-right: 80px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .texts__hero{
+    margin-top: -110px;
+  }
+}
